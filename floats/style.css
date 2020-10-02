@@ -1,0 +1,14 @@
+p{
+    background-color: blue;
+    color: aquamarine;
+}
+
+.classItem {
+    background-color: blueviolet;
+    color: chartreuse;
+}
+
+#idItem {
+    background-color: chartreuse;
+    color: orange;
+}
