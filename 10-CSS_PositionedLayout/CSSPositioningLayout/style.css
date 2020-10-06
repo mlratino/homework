@@ -1,0 +1,60 @@
+/* this adjust with padding...ask Kam */
+*{
+    box-sizing: border-box;
+}
+
+body {
+  font-size: 24px; 
+  line-height: 32px;
+  color: #333;
+  /* This is the default if it is not a P or h tag */
+}
+
+
+#fixed {
+    background: grey;
+    position: fixed;
+    padding:40px;
+    text-align: center;
+    /* get rid of space at top */
+    margin:0;
+    /*  use top, left... to tell the div where to go */
+    top:0;
+    left: 0;
+    }
+
+    /* MOve all of the text by targeting the wrapper */
+    .wrapper {
+            width: 600px;
+            margin: 0 auto 0 auto;
+            padding: 20px;
+    }
+h1 {
+    font-size: 36;
+    line-height: 45px;
+    margin-bottom: 20px;
+}
+p{
+    font-size: 18px;
+    line-height: 28px;
+    margin-bottom:20px;
+}
+
+    #relative {
+    background: pink;
+    position:  relative;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;  
+    height: 200px;  
+}
+#absolute {
+    background: yellowgreen;
+    width: 250px;
+    position: absolute;
+    padding:20px;
+    text-align: center;
+    /* bottom: 0; */
+    /* right: -30px; */
+}
+/* Ask Kam */
