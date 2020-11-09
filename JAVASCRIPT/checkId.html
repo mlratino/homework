@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <title>data types, user inputs conditional logic, booleans</title>
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+<body>
+
+
+
+<script type="text/javascript">
+
+
+
+var eatSteak = confirm("Do you eat Steak?");
+
+// commented out to do the second part because we don't need this alert to return tru or false alert to the screen
+// alert(eatSteak);
+
+
+// conditional statement based on the result
+
+// if(eatSteak) {
+//     alert("meat eater!");}
+    
+//         else {
+//             alert("vegan!");
+//         }
+
+
+// return a result based on user response boolean.  document.write lets me write to the screen based on the boolean response
+if(eatSteak){
+  document.write("Here's a steak because you eat meat and clicked ok or true");
+}
+else {
+document.write("Here's tofu stir fry because you clicked cancel or false");
+}
+
+
+// create a prompt a return a response base on user input
+
+var year = prompt ("What year were you born?");
+if (year< 2001){
+  alert  ("Here's some sake! because your input is < target");
+}
+  else if (year > 2001){
+   alert ("NO sake for you because your input is >target");
+  }
+  else {
+    alert("Happy Birthday sake for you because your input =target");
+  }
+
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
