@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Rock Paper Scissors</title>
+  <!-- <link rel="stylesheet" type="text/css" href="assets/css/style.css"> -->
+</head>
+<body>
+<!-- I need the user to make a choice
+Computer makes a choice
+Capture those computerChoicesCompare those choices, and determine a win, loss, or tie(use a conditional if statement)
+Display the result to the user -->
+    <!-- the following div is the game container -->
+    <script type="text/javascript">  
+    
+    // document.onkeyup = function(){
+    //     alert("working!");
+    // }
+
+    var options =["r","p","s"];
+  
+
+        document.onkeyup = function () {
+                var userGuess =String.fromCharCode(event.keyCode).
+                toLowerCase();
+// error handling to keep the input in lower case. the variable will be reassign each time the user presses a key ans the function runs over and over
+                console.log(userGuess);
+
+
+  // Create a formula that will have the computer choose for the array at random
+
+            var computerGuess = options[Math.floor(Math.random()*options.length)];
+// Math.random will produce a random decimal number between 0 and 1.  Then that number will be multiplied by the length of the array. which is always one more that the index number.  THEN we apply Math.floor that rounds down so we dont end up with an array index outside of our range
+            console.log(computerGuess);
+
+            if (userGuess === 'r'|| userGuess ==='p' || userGuess === 's') {
+                alert("chosen correctly!");
+            } else {
+                    alert("Please choose r, p, or s");
+            }
+
+
+
+
+
+
+
+
+
+
+        }
+    
+    
+    
+    
+    
+    
+    
+    </script>
+    </body>
+    </html>
