@@ -4,46 +4,119 @@
 <head>
   <meta charset="UTF-8">
   <title>Rock Paper Scissors</title>
-  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <!-- <link rel="stylesheet" type="text/css" href="assets/css/style.css"> -->
 </head>
 <body>
-<div id-"game></div>"
+
+    <!-- the following div is the game container -->
+<div id="game">
+
+
+ <!-- 1. Have out put for instructions -->
+<p>Press r, p or s to begin the game!</p>
+
+</div>
 
 
 <script type="text/javascript">
+// Problem- How to capture variable...input
+// 2.Get user input using keypress and lets go the function will execute and track it. store info as a variable for later use.
 
-// Creates an array that lists out 
+// Create variables to hold number of wins and losses and ties. They start at 0. We can't just declare it we have to initialize it with a variable
+
+var wins = 0;
+// // same as users score
+var losses =0;
+var ties =0;
+
+
+//  var wins =0,
+//      ties =0,
+//      losses =0;
+
+
+// solution:this function is run when user presses the key
+
+document.onkeyup=function(event){
+    // determine which key was pressed. Stor the event in the variable to be used later
+    var userGuess = event.key;
+    // key is a property of the object event
+
+// 3. Problem: get random choice from the computer. Solution:  Creates an array that lists out all of the . Randomly make a choice from the array
+// 3.  Creates an array that lists out all of the options
+
+
 
 var computerChoices =["r","p","s"];
 
-
-// this function is run when user presses the key
-document.onkeyup=function(event){
-    
-// Determines which key was pressed
-    var userGuess =event.key;
-
-// Randomly choose from the options Computer chooses 
+// Randomly choose from the options(array) Computer chooses. Math is a global object. random is a method that give a random number between 0 and . use computerChoices to define the length array indexing
+//  math.floor is a tool it uses to choose from our array
 var computerGuess =computerChoices[Math.floor(Math.random()*computerChoices.length)];
 
-// Only run the following code block if the user presses r p or s
+// 4. Problem: Compare guesses and determine result Solution: Use conditional statements in order to determine result
+//  this logic determines the outcome of t he game(win loss tie) and increments the appropriate category
 
-if ((userGuess==="r")||(userGuess==="p")||)(userGuess==="s")){
+if((userGuess === "r")|| (userGuess === "p")||(userGuess ==="s")) {
+//  equality operator check "translates the key stroke"  // 
+// once the condition is met, do something with the result. Solution:Store the result in counter variables
 
-    // Alert the userGuess and computerGuess
-    alert("User guess:" + userGuess);
-    alert("Computer guess:" + computerGuess);
+if((userGuess === "r") && (computerGuess === "s")) {
+    wins++;
+} 
+else if((userGuess === "r") && (computerGuess === "p")) {
+    losses++;
+}
+
+else if((userGuess === "s") && (computerGuess === "r")) {
+    losses++;
+}
+else if((userGuess === "s") && (computerGuess === "p")) {
+    wins++;
+}
+else if((userGuess === "p") && (computerGuess === "r")) {
+    wins++;
+}
+else if((userGuess === "p") && (computerGuess === "s")) {
+    losses++;
+}
+else if (userGuess === computerGuess) {
+    ties++;
+}
+else {
+    alert("please enter a valid input");
+}
+}
+
+// need to display output to hold our new HTML. Our HTML now keeps track of the user and computer guesses, and wins/losses/ties. intersperses results with the string to describe the data. Display data using a query selector
+//  this will be rendered because of below
+var html =
+"<p> You chose: "  + userGuess + "</p>" +
+"<p>Hal chose: " + computerGuess + "</p>" +
+"<p> Wins: " + wins + "</p>" +
+"<p> Losses: " + losses + " </p>" +
+"<p> Ties: " + ties + " </p>";
+
+
+
+    
+
+
+// set the inner HTML contents of the #game div to our html string..connect them?
+// document.querySelector("#game").innerHTML =html;
+
+// could have done this: Replace whatever is inside the HTML div with the var html
+document.getElementById("game").innerHTML =html;
+
+// it is the same thing query selector allows me to select anything and pass it
+
+
+
+    // // Alert the userGuess and computerGuess
+    // alert("User guess:" + userGuess);
+    // alert("Computer guess:" + computerGuess);
 
 
 }
-
-
-}
-
-
-
-
-
 
 </script>
 
