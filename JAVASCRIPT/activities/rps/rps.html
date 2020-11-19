@@ -42,7 +42,7 @@ Display the result to the user -->
 
             var computerGuess = options[Math.floor(Math.random()*options.length)];
 // Math.random will produce a random decimal number between 0 and 1.  Then that number will be multiplied by the length of the array. which is always one more that the index number.  THEN we apply Math.floor that rounds down so we don't end up with an array index outside of our range. No matter what letter user chooses this makes it so that the computer can only choose rp or s
-                    console.log(computerGuess);
+                    // console.log(computerGuess);
 // Compare the choices. Testing- First if statement tells the users whether they have chosen rp or s and alerts them if they have followed instructions
             // if (userGuess === 'r'|| userGuess ==='p' || userGuess === 's') {
             //     // alert("chosen correctly!");
@@ -55,11 +55,10 @@ Display the result to the user -->
             if (userGuess === "r"|| userGuess ==="p" || userGuess === "s") {
             
             
-            // if((userGuess==='r')&&(computerGuess==='r')) {
-            //     alert("You tie!");
+          
             
 
-            if((userGuess==="r")&&(computerGuess==="s" {
+            if((userGuess==="r")&&(computerGuess==="s")) {
                 // alert("You win!");
                 wins++;
                 // alert("Wins  "+ wins);
@@ -117,7 +116,7 @@ Display the result to the user -->
             
             else {
                     alert("Please choose r, p, or s");
-                } 
+                } }
 
 // This works with the <div> game to update to the screen the results.  the document. means print to screen the result of the data collected by the keys and processed through the js between the script tags
 
@@ -130,12 +129,12 @@ Display the result to the user -->
                 
                 
                    }
+        
+
+        
 
 
-
-
-
-        }
+        
         
     
         
