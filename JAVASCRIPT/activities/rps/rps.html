@@ -12,6 +12,11 @@ Computer makes a choice
 Capture those computerChoicesCompare those choices, and determine a win, loss, or tie(use a conditional if statement)
 Display the result to the user -->
     <!-- the following div is the game container -->
+    <div id= "game">
+        <p>Press r, p, or s to begin playing</p>
+    </div>
+
+
     <script type="text/javascript">  
     
     // document.onkeyup = function(){
@@ -19,11 +24,16 @@ Display the result to the user -->
     // }
 
     var options =["r","p","s"];
-  
+
+  // Create variables to hold number of wins and losses and ties. They start at 0. We can't just declare it we have to initialize it with a variable
+
+    var wins = 0;
+    // // same as users score
+    var losses = 0;
+    var ties = 0;
 
         document.onkeyup = function () {
-                var userGuess =String.fromCharCode(event.keyCode).
-                toLowerCase();
+                var userGuess =String.fromCharCode(event.keyCode).toLowerCase();
 // error handling to keep the input in lower case. the variable will be reassign each time the user presses a key ans the function runs over and over
                 console.log(userGuess);
 
@@ -31,27 +41,104 @@ Display the result to the user -->
   // Create a formula that will have the computer choose for the array at random
 
             var computerGuess = options[Math.floor(Math.random()*options.length)];
-// Math.random will produce a random decimal number between 0 and 1.  Then that number will be multiplied by the length of the array. which is always one more that the index number.  THEN we apply Math.floor that rounds down so we dont end up with an array index outside of our range
-            console.log(computerGuess);
+// Math.random will produce a random decimal number between 0 and 1.  Then that number will be multiplied by the length of the array. which is always one more that the index number.  THEN we apply Math.floor that rounds down so we don't end up with an array index outside of our range. No matter what letter user chooses this makes it so that the computer can only choose rp or s
+                    console.log(computerGuess);
+// Compare the choices. Testing- First if statement tells the users whether they have chosen rp or s and alerts them if they have followed instructions
+            // if (userGuess === 'r'|| userGuess ==='p' || userGuess === 's') {
+            //     // alert("chosen correctly!");
+            // } else {
+            //         alert("Please choose r, p, or s");
+            // }
 
-            if (userGuess === 'r'|| userGuess ==='p' || userGuess === 's') {
-                alert("chosen correctly!");
-            } else {
-                    alert("Please choose r, p, or s");
+
+
+            if (userGuess === "r"|| userGuess ==="p" || userGuess === "s") {
+            
+            
+            // if((userGuess==='r')&&(computerGuess==='r')) {
+            //     alert("You tie!");
+            
+
+            if((userGuess==="r")&&(computerGuess==="s" {
+                // alert("You win!");
+                wins++;
+                // alert("Wins  "+ wins);
+            }
+            
+            if((userGuess==="r")&&(computerGuess==="p")) {
+                // alert("You lose!");
+                losses++;
+                // alert("Losses  " + losses);
+            }
+            
+
+
+            // if((userGuess==='p')&&(computerGuess==='p')) {
+            //     alert("You  tie!");
+            // }
+            
+            if((userGuess==="s")&&(computerGuess==="r")) {
+                // alert("You  lose!");
+                losses++;
+                // alert("Losses  "+ losses);
+            }
+            
+            
+            if((userGuess==="s")&&(computerGuess==="p")) {
+                // alert("You  win!");
+                wins++;
+                // alert("Wins  " + wins);
+            }
+            
+
+
+            // if((userGuess==='s')&&(computerGuess==='s')) {
+            //     alert("You tie!");
+            // }
+            
+            if((userGuess==='p')&&(computerGuess==='s')) {
+                // alert("You lose!");
+                losses++;
+                // alert("Losses  "+ losses);
             }
 
+            if((userGuess==='p')&&(computerGuess==='r')) {
+                // alert("You win!");
+                wins++;
+                // alert("Wins  " + wins);
 
+            }
 
+            if ((userGuess===computerGuess)){
+                // alert("YOU TIE!");
+                ties++;
+                // alert("Ties  "+ ties);
+            }
+            
+            else {
+                    alert("Please choose r, p, or s");
+                } 
 
+// This works with the <div> game to update to the screen the results.  the document. means print to screen the result of the data collected by the keys and processed through the js between the script tags
 
+                var html="<p>Press r, p, or s to start playing</p>"+
+                "<p>Wins:   "+   wins +"</p>" +
+                "<p>Losses: "+ losses +"</p>" +
+                "<p>Ties:   "+  ties +"</p>";
+
+                document.querySelector('#game').innerHTML =html;
+                
+                
+                   }
 
 
 
 
 
         }
+        
     
-    
+        
     
     
     
