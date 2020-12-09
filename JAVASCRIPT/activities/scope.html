@@ -70,13 +70,20 @@
     var name = "Peleke";
     var age = 92;
     var languages = ["English", "Norwegian", "Spanish"];
-
+// ____________________________________________________________________________________________
     function firstFunction(message) {
       console.log(message + name + " is " + age + ".");
     }
 
     // "Oh, my! Peleke is 92."
     firstFunction("Oh my! ");
+
+
+// __________________________________________________________________________________________
+
+
+
+    // set the secondFunction variable to name. must enclose strings printed to console in "" to create a sentence that can be used with different variables when the secondFunction function is called and the variable is defined
 
     function secondFunction(name) {
       console.log(name + " is " + age + ".");
@@ -92,9 +99,13 @@
       return name + " is " + age + ".";
     }
 
+
+
+   
     // Log the return value of thirdFunction.
     // BONUS: Do this without a variable assignment.
     console.log(thirdFunction(100));
+ // ________________________________________________________________________________
 
     // CHALLENGE: Write a function that takes a string argument, and prints:
     // name + " likes " + str + "."
@@ -105,11 +116,13 @@
     // Next, research forEach, and use the report function
     // to print the values in the languages array defined
     // above.
+    // The forEach() method calls a function once for each element in an array, in order.
+    // Note: the function is not executed for array elements without values. The variable languages is used to call the array
     languages.forEach(report);
 
     // Or:
     languages.forEach(function report(str) {
-      // forEach essentially writes a for loop *for* us!
+      // forEach essentially writes a for loop *for* us! prints the array in order to the console. 
       console.log(str);
     });
     </script>
