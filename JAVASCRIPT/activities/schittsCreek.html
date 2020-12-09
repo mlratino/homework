@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Question Game</title>
+</head>
+
+<body>
+
+  <h1>Question Game!</h1>
+
+  <p id="score"></p>
+  <p id="question"></p>
+
+  <script>
+
+
+
+var questions = [
+{ q: "The fictional town of Schitt's Creek is located at Pinewood Studios, Toronto, Ontario, Canada.", a: "t" },
+{ q: "The lobby in the office building where the Motel pitch takes place is the same one used in Suits (2011).", a: "t" },
+{ q: "The pink dress that Alexis pulls from the bag in the last episode is what she was wearing the first time we saw her in the first episode.", a: "t" },
+{ q: "In the season one season finale, Catherine O'Hara's character Moira pays homage to her character in Home Alone, Kate McCallister when referring to David's disappearance. He's out there frightened and alone Declaration of Independence was created in 1745.", a: "t" },
+{ q: "Eugene Levy (Johnny) works on the show with his real-life son and daughter. Dan Levy plays David, Johnny's son, and Sarah Levy plays Twyla, a waitress at the town diner.", a: "f" },
+{ q: "First, Johnny originally purchased the town of Schitt's Creek as a joke for David?", a: "t" },
+{ q: "When Moira is frantically packing her wigs, Kristen and Robin are the names of the two wigs that don't like each other?", a: "t" },
+{ q: "Herb Ertlinger is the name of the winery Moira makes the commercial for?", a: "t" },
+{ q: "Moira and David are making enchiladas when they fold in the cheese?", a: "t" },
+{ q: "Alexis shared her first kiss with Jared LetoPrince Harry trusted Alexis with his life once, she went on a blind date with Leo, and she just went for bubble tea with Adam Levine.", a: "t" }
+];
+
+// We start the game with a score of 0.
+var score = 0;
+    // Variable to hold the index of current question.
+    var questionIndex = 0;
+
+    // FUNCTIONS
+    // ==============================================================================
+
+    // Function to render questions.
+    function renderQuestion() {
+      // If there are still more questions, render the next one.
+      if (questionIndex <= (questions.length - 1)) {
+        document.querySelector("#question").innerHTML = questions[questionIndex].q;
+      }
+      // If there aren't, render the end game screen.
+      else {
+        document.querySelector("#question").innerHTML = "Game Over!";
+        document.querySelector("#score").innerHTML = "Final Score: " + score + " out of " + questions.length;
+      }
+    }
+
+    // Function that updates the score...
+    function updateScore() {
+      document.querySelector("#score").innerHTML = "Score: " + score;
+    }
+
+
+    // MAIN PROCESS
+    // ==============================================================================
+
+    // Calling functions to start the game.
+    renderQuestion();
+    updateScore();
+
+    // When the user presses a key, it will run the following function...
+    document.onkeyup = function(event) {
+
+      // If there are no more questions, stop the function.
+      if (questionIndex === questions.length) {
+        return;
+      }
+
+      // Determine which key was pressed, make it lowercase, and set it to the userInput variable.
+      var userInput = event.key.toLowerCase();
+
+      // Only run this code if "t" or "f" were pressed.
+      if (userInput === "t" || userInput === "f") {
+
+        // If they guess the correct answer, increase and update score, alert them they got it right.
+        if (userInput === questions[questionIndex].a) {
+          alert("Correct!");
+          score++;
+          updateScore();
+        }
+        // If wrong, alert them they are wrong.
+        else {
+          alert("Wrong!");
+        }
+
+        // Increment the questionIndex variable and call the renderQuestion function.
+        questionIndex++;
+        renderQuestion();
+
+      }
+
+    };
+
+  </script>
+
+</body>
+
+</html>
+
