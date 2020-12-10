@@ -1,0 +1,58 @@
+
+<!-- saved from url=(0405)https://servedby.flashtalking.com/container/11660;84923;8739;iframe/?U1=10285366A&ft_referrer=https%3A//www.art.com/products/p10285366-sa-i935805/his-master-s-voice.htm%3FRFID%3D217825%26ProductTarget%3D798991493493%26utm_medium%3Dcpc%26utm_source%3Dgoogle%26utm_campaign%3DPLA%26gclid%3DCjwKCAiAq8f-BRBtEiwAGr3DgYf6wMyfZAakzIHYNwjQ_PpyuFa9AjUvZJ0i4iNURuiV608ZoXw2RBoCKIMQAvD_BwE&ns=&cb=170128.33508815084 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"></head><body><script>var urlHarvest = true;</script><script>var urlHarvest = false;</script> <img style="width:1px; height:1px;" src="./saved_resource"><script type="text/javascript">new Image().src = 'https://servedby.flashtalking.com/spot/8/11660;86368;8739/?U1=10285366A&ft_referrer=https%3A//www.art.com/products/p10285366-sa-i935805/his-master-s-voice.htm%3FRFID%3D217825%26ProductTarget%3D798991493493%26utm_medium%3Dcpc%26utm_source%3Dgoogle%26utm_campaign%3DPLA%26gclid%3DCjwKCAiAq8f-BRBtEiwAGr3DgYf6wMyfZAakzIHYNwjQ_PpyuFa9AjUvZJ0i4iNURuiV608ZoXw2RBoCKIMQAvD_BwE&ns=&cb=170128.33508815084';</script><script>
+var u1 = "10285366A";
+new Image().src = "https://fm.flashtalking.com/segment/411/view/" + u1;
+new Image().src = "https://fm.flashtalking.com/segment/474/view/" + u1;
+/**new Image().src = "https://fm.flashtalking.com/segment/440/view/" + u1 + "??forceRedirect=1&url=https://www.facebook.com/tr/?id=695511217228688&dl=[HTTP_REFERER]&ev=ViewContent&cd[content_name]=[ITEM_NAME_ARRAY]&cd[content_category]=[ITEM_CATEGORY_ARRAY]&cd[content_ids]=[ITEM_IDS_ARRAY]&cd[content_type]=product&cd[value]=[ITEM_PRICE_ARRAY]&cd[currency]=USD";*/
+</script><script>
+var ft_hSeg = {
+		ref_url:document.referrer,
+		ref_protocol:'',
+		ref_domain:'',
+		ref_path:'',
+		ref_queryStr:'',
+		spot_gID:8739,
+		seg_set_QStr:false,
+		seg_uri:'',
+		seg_dom:'',
+		ad_domains:['servedby.flashtalking.com','servedby.flashtalking.com'],
+		parseUri:function(str){
+						var o = this,
+							splitObj = /^(http[s]?):\/\/?([^\/\s]+)\/([\w\.]+[^#?;\s]+)(.*)?/.exec(str);
+							if(splitObj===null) return false;
+						var retObj = {
+									protocol:splitObj[1],
+									domain:splitObj[2],
+									path:splitObj[3],
+									queryString:splitObj[4]
+									}
+						return retObj;
+				},
+		set_seg:function(run){
+		                        if(run == false) { return false };
+								var	split_obj = this.parseUri(this.check_ref(this.ref_url)),
+									seg_path = '/segment/2/read/a;;pixel/?s='+this.spot_gID+'&d=';
+								if(split_obj===false) return false;
+								this.ref_protocol = split_obj.protocol;
+								this.ref_domain = split_obj.domain;
+								this.ref_queryStr = split_obj.queryString;
+								this.ref_path = split_obj.path.replace(new RegExp(decodeURIComponent('%5E/%7C/%24/g')), '');
+								this.seg_dom = this.ad_domains[(this.ref_protocol == 'http')? 0 : 1];
+								this.seg_uri = this.ref_protocol+'://'+this.seg_dom+seg_path+this.ref_domain+'&r='+this.ref_path+(this.seg_set_QStr?'&q='+decodeURIComponent(this.ref_queryStr):'');
+								new Image().src=this.seg_uri;
+								return true;
+						},
+		check_ref:function(url){
+            var st=window.location.search.indexOf('ft_referrer=')+12,
+                en=(window.location.search.substring(st)).indexOf('&ns=');
+                cont_ref = decodeURIComponent(window.location.search.substring(st,en+st));
+            if (url === ''|| this.ref_url !== cont_ref){
+                return  cont_ref;
+            }else{
+                return this.ref_url;
+            }
+		}
+	};
+		ft_hSeg.set_seg(urlHarvest);
+</script></body></html>
